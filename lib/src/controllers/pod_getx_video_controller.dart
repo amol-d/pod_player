@@ -56,6 +56,7 @@ class PodGetXVideoController extends _PodGesturesController {
     // checkPlayerType();
     podLog(_videoPlayerType.toString());
     try {
+      await _videoCtr?.dispose();
       await _initializePlayer();
       await _videoCtr?.initialize();
       _videoDuration = _videoCtr?.value.duration ?? Duration.zero;
